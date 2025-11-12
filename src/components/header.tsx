@@ -1,29 +1,39 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
   return (
     <header className="w-full h-20 flex items-center justify-between px-28 ">
       {/* Logo */}
       <div className="flex items-center gap-3">
-        <Image src="/logo-labor.png" alt="Logo" width={55} height={50.13} />
-        <Image src="/LABOR.png" alt="Labor Texto" width={76} height={27} />
+        <Image src="/LOGO.svg" alt="Logo" width={55} height={50.13} />
+        <Image src="/LABOR.svg" alt="Labor Texto" width={76} height={27} />
       </div>
 
       {/* Navegação */}
-      <nav className="flex items-center gap-8 text-gray-700 font-semibold">
-        <a href="#projeto" className="hover:text-blue-600 transition">
+      <nav className="flex items-center gap-8 text-neutral-900 font-semibold">
+        <Link
+          href="#projeto"
+          className="hover:text-blue-600 transition text-[14px]"
+        >
           O projeto
-        </a>
-        <a href="#sobre" className="hover:text-blue-600 transition">
+        </Link>
+        <Link
+          href="#sobre"
+          className="hover:text-blue-600 transition text-[14px]"
+        >
           Sobre Nós
-        </a>
-        <a href="#faqs" className="hover:text-blue-600 transition">
+        </Link>
+        <Link
+          href="#faqs"
+          className="hover:text-blue-600 transition text-[14px]"
+        >
           FAQs
-        </a>
+        </Link>
       </nav>
 
       {/* Botão */}
-      <button className="bg-blue-600 text-white px-5 py-2 rounded-md flex items-center gap-2 hover:bg-blue-700 transition">
+      <button className="bg-sky-600 text-white px-5 py-2 rounded-md flex items-center gap-2 hover:bg-sky-700 transition">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-5 w-5"

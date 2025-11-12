@@ -1,17 +1,20 @@
+// page.tsx
 import Image from "next/image";
 import Header from "@/components/header";
-import { CirclePlay } from "lucide";
+import FeaturesSection from "@/components/feature-session";
+import JobsCarousel from "@/components/vagas";
 
 export default function Home() {
   return (
     <div className="bg-neutral-100 w-full min-h-screen overflow-hidden">
       <Header />
 
-      <main className="relative flex items-center justify-between px-28 pt-10">
-        {/* Fundo decorativo esquerdo (atrás de tudo) */}
+      {/* Sessão principal ocupa 100vh */}
+      <main className="relative flex items-center justify-between px-10 pt-10 min-h-screen">
+        {/* Fundo decorativo esquerdo */}
         <div className="absolute left-0 bottom-10 z-10 pointer-events-none">
           <Image
-            src="/esquerda.png"
+            src="/esquerda.svg"
             alt="Faixa esquerda"
             width={300}
             height={100}
@@ -19,10 +22,10 @@ export default function Home() {
           />
         </div>
 
-        {/* Fundo decorativo direito (atrás de tudo) */}
+        {/* Fundo decorativo direito */}
         <div className="absolute right-0 bottom-10 z-10 pointer-events-none">
           <Image
-            src="/direita.png"
+            src="/direita.svg"
             alt="Faixa direita"
             width={500}
             height={300}
@@ -42,10 +45,10 @@ export default function Home() {
           </p>
 
           <div className="mt-8 flex gap-6">
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition">
+            <button className="bg-sky-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-sky-700 transition">
               Comece agora
             </button>
-            <button className="text-blue-600 font-semibold hover:underline flex items-center gap-2">
+            <button className="text-sky-600 font-semibold hover:underline flex items-center gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -56,7 +59,6 @@ export default function Home() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="lucide lucide-circle-play-icon lucide-circle-play"
               >
                 <path d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z" />
                 <circle cx="12" cy="12" r="10" />
@@ -69,7 +71,7 @@ export default function Home() {
         {/* Imagem do celular */}
         <div className="relative z-20">
           <Image
-            src="/Mobile.png"
+            src="/Mobile.svg"
             alt="Aplicativo Labor"
             width={320}
             height={640}
@@ -78,6 +80,12 @@ export default function Home() {
           />
         </div>
       </main>
+
+      {/* Dá um respiro entre as seções */}
+      <div className="h-12 bg-neutral-100" />
+
+      <FeaturesSection />
+      <JobsCarousel />
     </div>
   );
 }
